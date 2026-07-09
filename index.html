@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metro Coatings — Professional Powder Coating Services · Delhi</title>
+<meta name="description" content="Metro Coatings – Pioneers in aluminium extrusion powder coating. Akzo Nobel & Jotun certified. Up to 30 years coating warranty. Swaroop Nagar, Delhi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
+
+  :root {
+    --bg:        #060810;
+    --surface:   #0F1320;
+    --card:      #131826;
+    --card-2:    #1A2030;
+    --border:    rgba(255,255,255,0.07);
+    --border-2:  rgba(255,255,255,0.14);
+
+    --navy:      #3244CC;        /* POWDER COATING blue from logo */
+    --navy-2:    #4A5EE0;
+    --navy-d:    #1A2898;
+
+    --red:       #E8650A;        /* Orange gun from logo T */
+    --red-2:     #FF7A28;
+    --red-d:     #C04800;
+
+    --gold:      #D4A820;
+    --gold-2:    #F2D055;
+
+    --text:      #F0EDE8;
+    --dim:       #8A92A8;
+    --dim-2:     #5A6178;
+    --muted:     #3A4156;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     GUN CURSOR — Statfield Magnum style, gold metallic
+  ═══════════════════════════════════════════════ */
+  #gun {
+    position: fixed; pointer-events: none; z-index: 999999;
+    top: 0; left: 0; will-change: transform;
+  }
+  #gun.firing  { animation: recoil 0.12s ease-out forwards; }
+  #gun.holding { animation: holdShake 0.09s ease-in-out infinite; }
+  @keyframes recoil {
+    0%   { transform: var(--gpos) translateX(0) rotate(0deg); }
+    35%  { transform: var(--gpos) translateX(-6px) rotate(-3deg); }
+    100% { transform: var(--gpos) translateX(0) rotate(0deg); }
+  }
+  @keyframes holdShake {
+    0%,100% { transform: var(--gpos) translate(0,0); }
+    25%     { transform: var(--gpos) translate(-1.5px,1px); }
+    75%     { transform: var(--gpos) translate(1.5px,-1px); }
+  }
+
+  #spray-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 99998; }
+
+  /* ═══════════════════════════════════════════════
+     NAV
+  ═══════════════════════════════════════════════ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 9000;
+    height: 70px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    background: rgba(6,8,16,0.88);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .logo {
+    display: flex; align-items: center; text-decoration: none;
+  }
+  nav .logo img {
+    height: 52px; width: auto; display: block;
+    border-radius: 8px;
+  }
+  .nav-links { display: flex; gap: 26px; list-style: none; align-items: center; }
+  .nav-links a {
+    color: #B0B6C8; text-decoration: none; font-size: 0.8rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red); color: #fff !important; padding: 9px 20px;
+    border-radius: 5px; font-weight: 600;
+    box-shadow: 0 4px 16px rgba(230,57,70,0.35);
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--red-d); }
+
+  /* ═══════════════════════════════════════════════
+     HERO
+  ═══════════════════════════════════════════════ */
+  .hero {
+    min-height: 100svh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 110px 5% 80px;
+    position: relative; overflow: hidden;
+    background:
+      radial-gradient(ellipse 70% 60% at 30% 40%, rgba(30,58,110,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 60%, rgba(230,57,70,0.12) 0%, transparent 65%),
+      #060810;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+  #hero-bg { position: absolute; inset: 0; pointer-events: none; }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 32px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ''; width: 28px; height: 1px; background: var(--red); opacity: 0.5;
+  }
+
+  .hero-h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 6.5rem);
+    line-height: 1.0;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    color: var(--text); margin-bottom: 8px;
+  }
+  .hero-h1 .l2 { color: var(--red); display: block; }
+  .hero-h1 .l3 { color: var(--navy-2); display: block; font-size: 0.55em; letter-spacing: 0.04em; margin-top: 12px; }
+
+  .hero-desc {
+    font-size: clamp(0.95rem, 1.6vw, 1.18rem);
+    color: #98A0B8;
+    max-width: 540px; margin: 32px auto 12px;
+    line-height: 1.75;
+  }
+
+  .hero-partners {
+    display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;
+    margin: 36px 0 48px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.74rem; letter-spacing: 0.1em;
+    color: var(--dim);
+  }
+  .partner-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px;
+    background: rgba(30,58,110,0.18);
+    border: 1px solid rgba(30,58,110,0.4);
+    border-radius: 100px;
+    color: #A8B5D4;
+  }
+  .partner-pill::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--red); border-radius: 50%;
+  }
+
+  .hero-stats {
+    display: flex; gap: clamp(24px, 5vw, 64px);
+    margin-bottom: 52px; flex-wrap: wrap; justify-content: center;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    color: var(--text); display: block; line-height: 1;
+  }
+  .hero-stat-num .accent { color: var(--red); }
+  .hero-stat-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.66rem; color: var(--dim-2);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin-top: 6px; display: block;
+  }
+
+  .spray-hint {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px dashed rgba(230,57,70,0.35);
+    border-radius: 100px; padding: 11px 24px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem; color: var(--dim);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    animation: hintPulse 2.5s ease-in-out infinite;
+  }
+  .hint-dot {
+    width: 7px; height: 7px; background: var(--red); border-radius: 50%;
+    animation: dotBlink 2.5s ease-in-out infinite;
+  }
+  @keyframes hintPulse {
+    0%,100% { border-color: rgba(230,57,70,0.2); color: var(--dim-2); }
+    50%     { border-color: rgba(230,57,70,0.55); color: var(--dim); }
+  }
+  @keyframes dotBlink {
+    0%,100% { opacity: 0.3; transform: scale(1); }
+    50%     { opacity: 1; transform: scale(1.4); }
+  }
+
+  /* ═══════════════════════════════════════════════
+     SECTION COMMONS
+  ═══════════════════════════════════════════════ */
+  section { padding: 100px 5%; position: relative; }
+
+  .sec-eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.68rem; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--red); margin-bottom: 14px; font-weight: 600;
+  }
+  .sec-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: 0.03em; line-height: 1.1; font-weight: 700;
+    margin-bottom: 16px; color: var(--text);
+  }
+  .sec-title .accent { color: var(--red); }
+  .sec-sub {
+    font-size: 0.98rem; color: var(--dim);
+    max-width: 560px; line-height: 1.75;
+    margin-bottom: 56px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     ABOUT / JOB WORK EXPLANATION
+  ═══════════════════════════════════════════════ */
+  #about { background: var(--surface); }
+
+  .about-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    align-items: center;
+  }
+
+  .about-flow {
+    display: flex; align-items: stretch; gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 16px;
+  }
+  .flow-step {
+    flex: 1; background: var(--card);
+    padding: 28px 20px; text-align: center;
+  }
+  .flow-icon {
+    width: 48px; height: 48px;
+    background: rgba(230,57,70,0.12);
+    border: 1px solid rgba(230,57,70,0.3);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+    font-size: 1.4rem;
+  }
+  .flow-step h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 6px;
+  }
+  .flow-step p { font-size: 0.78rem; color: var(--dim); line-height: 1.55; }
+  .flow-arrow {
+    align-self: center;
+    color: var(--red); font-size: 1.4rem;
+    padding: 0 6px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     MATERIALS WE COAT
+  ═══════════════════════════════════════════════ */
+  #materials { background: var(--bg); }
+  .mat-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .mat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 22px;
+    transition: border-color 0.25s, transform 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .mat-card:hover {
+    border-color: rgba(230,57,70,0.4);
+    transform: translateY(-3px);
+  }
+  .mat-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--red);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .mat-card:hover::before { transform: scaleX(1); }
+  .mat-icon {
+    font-size: 1.8rem; margin-bottom: 14px; display: block;
+  }
+  .mat-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 8px;
+  }
+  .mat-card p { font-size: 0.83rem; color: var(--dim); line-height: 1.6; }
+  .mat-tag {
+    display: inline-block; margin-top: 10px;
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.62rem;
+    color: var(--red); letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════════════
+     COLOR CATALOG — categorized with warranty
+  ═══════════════════════════════════════════════ */
+  #colors { background: var(--surface); }
+
+  .cat-tabs {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .cat-tab {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 9px 20px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dim);
+    transition: all 0.2s;
+  }
+  .cat-tab:hover { border-color: var(--border-2); color: var(--text); }
+  .cat-tab.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+  }
+  .cat-tab .warranty {
+    margin-left: 8px;
+    padding: 2px 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 100px;
+    font-size: 0.62rem;
+  }
+  .cat-tab.active .warranty { background: rgba(255,255,255,0.25); }
+
+  .color-section {
+    display: none;
+    animation: fadeUp 0.4s ease;
+  }
+  .color-section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .warranty-banner {
+    display: flex; align-items: center; gap: 18px;
+    padding: 18px 24px;
+    background: rgba(30,58,110,0.18);
+    border: 1px solid rgba(30,58,110,0.4);
+    border-left: 4px solid var(--red);
+    border-radius: 10px;
+    margin-bottom: 28px;
+  }
+  .warranty-badge {
+    flex-shrink: 0;
+    width: 56px; height: 56px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 0.95;
+    padding: 4px;
+  }
+  .warranty-text h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 4px;
+  }
+  .warranty-text p { font-size: 0.85rem; color: var(--dim); line-height: 1.5; }
+
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+  }
+  .swatch {
+    border-radius: 10px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: none;
+  }
+  .swatch:hover {
+    transform: scale(1.06) translateY(-3px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.55);
+  }
+  .swatch-color { height: 72px; }
+  .swatch-name {
+    background: var(--card);
+    padding: 8px 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.64rem;
+    color: var(--dim);
+    text-align: center;
+  }
+
+  /* ═══════════════════════════════════════════════
+     FINISHES
+  ═══════════════════════════════════════════════ */
+  #finishes { background: var(--bg); }
+  .finishes-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .finish-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.25s;
+  }
+  .finish-card:hover {
+    border-color: rgba(230,57,70,0.4);
+    background: var(--card-2);
+  }
+  .finish-preview {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .finish-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.92rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 4px;
+  }
+  .finish-card p { font-size: 0.74rem; color: var(--dim); }
+
+  /* ═══════════════════════════════════════════════
+     PROCESS FLOW
+  ═══════════════════════════════════════════════ */
+  #process { background: var(--surface); }
+
+  .process-line {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 8px; position: relative;
+  }
+  .process-line::before {
+    content: ''; position: absolute;
+    top: 38px; left: 8%; right: 8%; height: 2px;
+    background: linear-gradient(to right, var(--red), var(--navy-2));
+    opacity: 0.25;
+    z-index: 0;
+  }
+  .proc-node {
+    text-align: center; padding: 20px 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    position: relative; z-index: 1;
+  }
+  .proc-circle {
+    width: 76px; height: 76px;
+    margin: 0 auto 16px;
+    background: linear-gradient(135deg, var(--red), var(--red-d));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(230,57,70,0.3);
+  }
+  .proc-node:nth-child(2) .proc-circle { background: linear-gradient(135deg, #C73544, #8B1923); }
+  .proc-node:nth-child(3) .proc-circle { background: linear-gradient(135deg, #9C3553, #5E1A37); }
+  .proc-node:nth-child(4) .proc-circle { background: linear-gradient(135deg, #6B3565, #3D1A47); }
+  .proc-node:nth-child(5) .proc-circle { background: linear-gradient(135deg, #3A3578, #1A1E5A); }
+  .proc-node h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 8px;
+  }
+  .proc-node p {
+    font-size: 0.78rem; color: var(--dim); line-height: 1.55;
+  }
+
+  /* ═══════════════════════════════════════════════
+     INFRASTRUCTURE / EQUIPMENT
+  ═══════════════════════════════════════════════ */
+  #infra { background: var(--bg); }
+  .infra-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+  .infra-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .infra-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(230,57,70,0.4);
+  }
+  .infra-img {
+    aspect-ratio: 16/10;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    overflow: hidden;
+  }
+  .infra-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .infra-body { padding: 18px 22px; }
+  .infra-tag {
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.62rem;
+    color: var(--red); letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 6px; display: block;
+  }
+  .infra-body h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 6px;
+  }
+  .infra-body p { font-size: 0.8rem; color: var(--dim); line-height: 1.5; }
+
+  .infra-specs {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .spec-card {
+    padding: 20px 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .spec-card h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem; letter-spacing: 0.04em;
+    color: var(--red); margin-bottom: 12px;
+  }
+  .spec-card ul { list-style: none; }
+  .spec-card li {
+    font-size: 0.8rem; color: var(--dim); padding: 5px 0;
+    display: flex; gap: 8px;
+  }
+  .spec-card li::before { content: '▸'; color: var(--red); }
+
+  /* ═══════════════════════════════════════════════
+     PORTFOLIO / WORK
+  ═══════════════════════════════════════════════ */
+  #work { background: var(--surface); }
+
+  .work-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .work-tile {
+    aspect-ratio: 4/5;
+    border-radius: 14px; overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: transform 0.3s;
+  }
+  .work-tile:hover { transform: scale(1.02); }
+  .work-tile-img {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .work-tile-img img { width: 100%; height: 100%; object-fit: cover; }
+  .work-tile.placeholder .work-tile-img {
+    background: linear-gradient(135deg, var(--card) 0%, var(--card-2) 100%);
+  }
+  .work-tile-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(6,8,16,0.95) 0%, rgba(6,8,16,0.3) 50%, transparent 100%);
+    padding: 18px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .work-tile-tag {
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.62rem;
+    color: var(--red); letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  .work-tile h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem; letter-spacing: 0.04em;
+    color: #fff;
+  }
+
+  .work-cta {
+    margin-top: 28px;
+    text-align: center;
+  }
+  .work-cta a {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--red); text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 500;
+    padding: 12px 24px;
+    border: 1px solid rgba(230,57,70,0.3);
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+  .work-cta a:hover {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+  }
+
+  /* ═══════════════════════════════════════════════
+     CLIENTS
+  ═══════════════════════════════════════════════ */
+  #clients { background: var(--bg); }
+  .clients-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden;
+  }
+  .client-cell {
+    background: var(--card);
+    aspect-ratio: 3/2;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+    padding: 20px;
+  }
+  .client-cell:hover { background: var(--card-2); }
+  .client-cell .placeholder-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    color: var(--dim-2);
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .partner-row {
+    margin-top: 36px;
+    padding: 32px;
+    background: rgba(30,58,110,0.1);
+    border: 1px solid rgba(30,58,110,0.3);
+    border-radius: 16px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 32px; align-items: center;
+  }
+  .partner-row h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 8px;
+  }
+  .partner-row p { color: var(--dim); font-size: 0.92rem; line-height: 1.65; }
+  .partner-logos {
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-end;
+  }
+  .partner-brand {
+    padding: 18px 26px;
+    background: #fff;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    color: var(--navy-d);
+  }
+  .partner-brand.jotun { color: #C8102E; }
+
+  /* ═══════════════════════════════════════════════
+     WHY US
+  ═══════════════════════════════════════════════ */
+  #why { background: var(--surface); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .why-item {
+    padding: 32px 26px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: all 0.25s;
+  }
+  .why-item:hover {
+    border-color: rgba(230,57,70,0.4);
+    background: var(--card-2);
+  }
+  .why-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.7rem;
+    color: var(--red);
+    letter-spacing: 0.12em;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 18px; display: block;
+  }
+  .why-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+  .why-item h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 10px;
+  }
+  .why-item p { font-size: 0.85rem; color: var(--dim); line-height: 1.65; }
+
+  /* ═══════════════════════════════════════════════
+     ENQUIRY / CONTACT
+  ═══════════════════════════════════════════════ */
+  #enquiry {
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(230,57,70,0.08) 0%, transparent 60%),
+      var(--bg);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: start;
+  }
+  .enq-info .sec-sub { margin-bottom: 32px; }
+
+  .contact-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .ci {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 18px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .ci-icon {
+    width: 40px; height: 40px;
+    background: rgba(230,57,70,0.12);
+    border: 1px solid rgba(230,57,70,0.3);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .ci-label {
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.62rem;
+    color: var(--dim-2); text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .ci-val { font-size: 0.88rem; color: var(--text); font-weight: 500; margin-top: 2px; line-height: 1.45; }
+  .ci-val a { color: inherit; text-decoration: none; }
+  .ci-val a:hover { color: var(--red); }
+
+  .wa-btn {
+    display: flex; align-items: center; gap: 10px;
+    background: rgba(37,211,102,0.1);
+    border: 1px solid rgba(37,211,102,0.3);
+    color: #4ade80;
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600; font-size: 0.92rem;
+    transition: background 0.2s;
+  }
+  .wa-btn:hover { background: rgba(37,211,102,0.18); }
+
+  .enq-form {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 40px 36px;
+  }
+  .enq-form h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 8px;
+  }
+  .enq-form p.form-sub {
+    font-size: 0.85rem; color: var(--dim); margin-bottom: 28px;
+  }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .fg label {
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.62rem;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--dim-2);
+  }
+  .fg input, .fg select, .fg textarea {
+    background: var(--card-2);
+    border: 1px solid var(--border-2);
+    border-radius: 8px; padding: 12px 14px;
+    font-family: 'Inter', sans-serif; font-size: 0.9rem;
+    color: var(--text);
+    outline: none; transition: border-color 0.2s;
+  }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--red); }
+  .fg select option { background: var(--card-2); }
+  .fg textarea { resize: vertical; min-height: 100px; }
+  .submit-btn {
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    border: none; border-radius: 10px;
+    padding: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.98rem; font-weight: 600;
+    transition: background 0.2s;
+    margin-top: 8px;
+    box-shadow: 0 6px 20px rgba(230,57,70,0.3);
+  }
+  .submit-btn:hover { background: var(--red-d); }
+
+  /* ═══════════════════════════════════════════════
+     FOOTER
+  ═══════════════════════════════════════════════ */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 48px 5% 30px;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 36px;
+  }
+  .footer-top h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--dim-2);
+    margin-bottom: 16px;
+  }
+  .footer-top a, .footer-top p {
+    display: block; color: var(--dim);
+    font-size: 0.85rem; text-decoration: none;
+    margin-bottom: 8px; line-height: 1.55;
+  }
+  .footer-top a:hover { color: var(--red); }
+  .footer-logo { margin-bottom: 14px; }
+  .footer-logo img { height: 42px; }
+  .footer-tagline { font-size: 0.85rem; color: var(--dim); line-height: 1.65; max-width: 320px; }
+  .footer-bottom {
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem; color: var(--dim-2);
+  }
+
+  /* ═══════════════════════════════════════════════
+     FLOATING ELEMENTS
+  ═══════════════════════════════════════════════ */
+  #spray-toast {
+    position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
+    z-index: 9997;
+    background: rgba(230,57,70,0.12);
+    border: 1px solid rgba(230,57,70,0.35);
+    color: var(--red);
+    padding: 10px 22px; border-radius: 100px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    white-space: nowrap;
+  }
+
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+  .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+  .wa-float .pulse {
+    position: absolute; inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #25D366;
+    animation: waPulse 2s ease-out infinite;
+  }
+  @keyframes waPulse {
+    0%   { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+
+  /* ═══════════════════════════════════════════════
+     SCROLL REVEAL
+  ═══════════════════════════════════════════════ */
+  [data-r] { opacity: 0; transform: translateY(34px); transition: opacity 0.75s ease, transform 0.75s ease; }
+  [data-r].in { opacity: 1; transform: none; }
+  [data-r][data-delay="1"] { transition-delay: 0.1s; }
+  [data-r][data-delay="2"] { transition-delay: 0.2s; }
+  [data-r][data-delay="3"] { transition-delay: 0.3s; }
+
+  /* ═══════════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════════ */
+  @media (max-width: 1100px) {
+    .work-grid, .mat-grid, .finishes-grid { grid-template-columns: repeat(3, 1fr); }
+    .clients-grid { grid-template-columns: repeat(4, 1fr); }
+    .footer-top { grid-template-columns: 2fr 1fr 1fr; }
+  }
+  @media (max-width: 900px) {
+    .about-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .about-flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+    #enquiry { grid-template-columns: 1fr; gap: 48px; }
+    .partner-row { grid-template-columns: 1fr; text-align: center; }
+    .partner-logos { justify-content: center; }
+    .process-line { grid-template-columns: repeat(3, 1fr); }
+    .process-line::before { display: none; }
+    .why-grid, .infra-grid, .infra-specs { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .nav-links .nav-cta { display: inline-block; }
+  }
+  @media (max-width: 580px) {
+    .work-grid, .mat-grid, .finishes-grid, .clients-grid, .why-grid, .infra-grid, .infra-specs { grid-template-columns: 1fr 1fr; }
+    .frow { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .process-line { grid-template-columns: 1fr; }
+    .swatch-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="spray-canvas"></canvas>
+
+<!-- ═══ GUN CURSOR ═══ -->
+<div id="gun">
+  <svg width="90" height="64" viewBox="0 0 90 64" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="gs">
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.72)"/>
+      </filter>
+      <linearGradient id="barG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#F2D055"/>
+        <stop offset="45%"  stop-color="#D4A820"/>
+        <stop offset="100%" stop-color="#8A6A08"/>
+      </linearGradient>
+      <linearGradient id="bodG" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#ECC040"/>
+        <stop offset="100%" stop-color="#9A7A10"/>
+      </linearGradient>
+      <linearGradient id="grpG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#C09020"/>
+        <stop offset="100%" stop-color="#6A4C08"/>
+      </linearGradient>
+    </defs>
+    <g filter="url(#gs)">
+      <rect x="7" y="13" width="18" height="26" rx="5" fill="url(#bodG)"/>
+      <rect x="8" y="14" width="10" height="8" rx="3" fill="#F2D458" opacity=".45"/>
+      <rect x="9" y="25" width="14" height="5" rx="2" fill="#8A6808"/>
+      <rect x="10" y="26" width="5" height="3" rx="1" fill="#C09020"/>
+      <rect x="17" y="26" width="4" height="3" rx="1" fill="#C09020"/>
+      <rect x="23" y="20" width="54" height="10" rx="3" fill="url(#barG)"/>
+      <rect x="24" y="20.5" width="52" height="3" rx="1.5" fill="#FADA70" opacity=".52"/>
+      <rect x="24" y="28.5" width="52" height="1.5" rx=".5" fill="#7A5C08" opacity=".55"/>
+      <line x1="26" y1="21.5" x2="77" y2="21.5" stroke="#F2D458" stroke-width=".5" opacity=".35"/>
+      <rect x="75" y="17" width="9" height="16" rx="2.5" fill="#B8900E"/>
+      <rect x="76" y="18" width="4" height="5" rx="1.5" fill="#EFC844" opacity=".55"/>
+      <rect x="82" y="19" width="8" height="12" rx="2.5" fill="#E8650A"/>
+      <rect x="83" y="19.5" width="3.5" height="4" rx="1.5" fill="#FF7A28" opacity=".5"/>
+      <circle cx="88" cy="22.5" r="1.1" fill="#994200"/>
+      <circle cx="88" cy="25"   r="1.1" fill="#994200"/>
+      <circle cx="88" cy="27.5" r="1.1" fill="#994200"/>
+      <ellipse cx="90" cy="25" rx="1.2" ry="5" fill="#FF7A28" opacity=".65"/>
+      <path d="M12 37 L10 58 Q14 62 22 61 L24 37 Z" fill="url(#grpG)"/>
+      <rect x="11" y="43" width="12" height="1.5" rx=".75" fill="#4A3405"/>
+      <rect x="11" y="48" width="12" height="1.5" rx=".75" fill="#4A3405"/>
+      <rect x="11.5" y="53" width="11" height="1.5" rx=".75" fill="#4A3405"/>
+      <rect x="22" y="39" width="2" height="20" rx="1" fill="#D4A820" opacity=".25"/>
+      <path d="M22 33 Q30 39 28 48 L23 48 Q21 39 18 33 Z" fill="#9A7A10"/>
+      <rect x="23" y="34" width="4" height="12" rx="2" fill="#E8650A"/>
+      <rect x="23.5" y="34.5" width="2" height="4" rx="1.5" fill="#FF7A28" opacity=".5"/>
+      <ellipse cx="17" cy="60" rx="5"   ry="4"   fill="#7A5C08"/>
+      <ellipse cx="17" cy="60" rx="3"   ry="2.5" fill="#A88010"/>
+      <ellipse cx="17" cy="60" rx="1.3" ry="1.1" fill="#C09828"/>
+      <path d="M17 64 Q15 71 7 74" stroke="#6A5008" stroke-width="4"   fill="none" stroke-linecap="round"/>
+      <path d="M17 64 Q15 71 7 74" stroke="#9A7812" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M7 22 Q2 26 1 33" stroke="#8A6808" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>
+</div>
+
+<div id="spray-toast">🎨 Click &amp; hold anywhere to spray powder</div>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#" class="logo">
+    <img src="logo-hd.png" alt="Metro Powder Coating">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#infra">Infrastructure</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#enquiry" class="nav-cta">Get Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <canvas id="hero-bg"></canvas>
+  <div class="hero-eyebrow">Powder Coating Services · Since Decades</div>
+  <h1 class="hero-h1">
+    METRO
+    <span class="l2">COATINGS</span>
+    <span class="l3">Aluminium Extrusion Specialists</span>
+  </h1>
+  <p class="hero-desc">
+    Pioneers in aluminium extrusion surface finishing. Professional powder coating on aluminium sections, profiles, hardware &amp; custom job work — backed by Akzo Nobel &amp; Jotun Paints.
+  </p>
+  <div class="hero-partners">
+    <span class="partner-pill">Akzo Nobel Certified</span>
+    <span class="partner-pill">Jotun Paints Authorized</span>
+    <span class="partner-pill">Up to 30-Yr Coating Life</span>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">30<span class="accent">YR</span></span>
+      <span class="hero-stat-label">Max Coating Life</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">20<span class="accent">FT</span></span>
+      <span class="hero-stat-label">Oven Capacity</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">100<span class="accent">+</span></span>
+      <span class="hero-stat-label">Shades Available</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">5<span class="accent">TYPES</span></span>
+      <span class="hero-stat-label">Coating Grades</span>
+    </div>
+  </div>
+  <div class="spray-hint">
+    <div class="hint-dot"></div>
+    Click &amp; hold anywhere to spray
+    <div class="hint-dot"></div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT / JOB WORK FLOW ═══ -->
+<section id="about">
+  <div class="about-wrap">
+    <div>
+      <div class="sec-eyebrow" data-r>How We Work</div>
+      <h2 class="sec-title" data-r data-delay="1">Job Work. Simple.<br><span class="accent">Reliable.</span></h2>
+      <p class="sec-sub" data-r data-delay="2">
+        You bring the raw material — aluminium extrusions, MS hardware, sheet metal, custom fabricated parts.
+        We handle every step of the coating process and return them ready to install. From single custom pieces
+        to bulk production runs, we deliver consistent quality on time.
+      </p>
+    </div>
+    <div class="about-flow" data-r data-delay="2">
+      <div class="flow-step">
+        <div class="flow-icon">📦</div>
+        <h4>YOU BRING</h4>
+        <p>Raw metal parts, profiles, sections</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon">🎨</div>
+        <h4>WE COAT</h4>
+        <p>Full process — pre-treat, coat, cure</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-icon">✓</div>
+        <h4>YOU COLLECT</h4>
+        <p>Finished parts, install-ready</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MATERIALS WE COAT ═══ -->
+<section id="materials">
+  <div class="sec-eyebrow" data-r>What We Coat</div>
+  <h2 class="sec-title" data-r data-delay="1">Specialists in <span class="accent">Aluminium.</span><br>Open to Every Metal.</h2>
+  <p class="sec-sub" data-r data-delay="2">We coat the substrates listed below. If you have something unusual — bring it, we'll quote.</p>
+  <div class="mat-grid" data-r data-delay="3">
+    <div class="mat-card">
+      <span class="mat-icon">🏗️</span>
+      <h3>Aluminium Extrusions</h3>
+      <p>Window frames, door profiles, curtain walls, architectural sections. Our specialty.</p>
+      <span class="mat-tag">Our Specialty</span>
+    </div>
+    <div class="mat-card">
+      <span class="mat-icon">🪟</span>
+      <h3>Aluminium Profiles</h3>
+      <p>Standard and custom-cut profiles for fabrication, residential and commercial projects.</p>
+      <span class="mat-tag">High Volume</span>
+    </div>
+    <div class="mat-card">
+      <span class="mat-icon">🔩</span>
+      <h3>MS Hardware</h3>
+      <p>Brackets, fittings, fasteners, fabricated assemblies — mild steel components of any size.</p>
+      <span class="mat-tag">General Job Work</span>
+    </div>
+    <div class="mat-card">
+      <span class="mat-icon">🚪</span>
+      <h3>Gates, Grills, Railings</h3>
+      <p>Wrought iron and steel architectural items. Anti-rust primer + top coat options.</p>
+      <span class="mat-tag">Architectural</span>
+    </div>
+    <div class="mat-card">
+      <span class="mat-icon">🪑</span>
+      <h3>Furniture &amp; Fixtures</h3>
+      <p>Chair frames, table bases, shelving, display fixtures — premium uniform finish.</p>
+      <span class="mat-tag">Premium Finish</span>
+    </div>
+    <div class="mat-card">
+      <span class="mat-icon">🔧</span>
+      <h3>Machine Components</h3>
+      <p>Industrial parts, covers, panels, chassis. Heat &amp; corrosion-resistant coatings available.</p>
+      <span class="mat-tag">Industrial</span>
+    </div>
+    <div class="mat-card">
+      <span class="mat-icon">📐</span>
+      <h3>Custom Pieces</h3>
+      <p>One-off custom items, prototypes, art installations. Single piece welcome.</p>
+      <span class="mat-tag">Single Piece OK</span>
+    </div>
+    <div class="mat-card">
+      <span class="mat-icon">📦</span>
+      <h3>Bulk Production</h3>
+      <p>OEM batch runs, exporter orders. Consistent batch-to-batch colour matching.</p>
+      <span class="mat-tag">OEM &amp; Export</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COLOR CATALOG WITH WARRANTY CATEGORIES ═══ -->
+<section id="colors">
+  <div class="sec-eyebrow" data-r>Color Catalog</div>
+  <h2 class="sec-title" data-r data-delay="1">100+ Shades.<br><span class="accent">5 Grades.</span></h2>
+  <p class="sec-sub" data-r data-delay="2">
+    Browse colors by grade. Each grade comes with a different coating lifecycle warranty, depending on the
+    powder used and the surface treatment specifications.
+  </p>
+
+  <!-- Tabs -->
+  <div class="cat-tabs" data-r data-delay="3">
+    <button class="cat-tab active" data-cat="basic">Basic <span class="warranty">3-5 YRS</span></button>
+    <button class="cat-tab" data-cat="wooden">Wooden <span class="warranty">5-7 YRS</span></button>
+    <button class="cat-tab" data-cat="metallic">Metallic <span class="warranty">7-10 YRS</span></button>
+    <button class="cat-tab" data-cat="luxury">Luxury <span class="warranty">10-15 YRS</span></button>
+    <button class="cat-tab" data-cat="premium">Premium <span class="warranty">15-30 YRS</span></button>
+  </div>
+
+  <!-- BASIC -->
+  <div class="color-section active" data-section="basic">
+    <div class="warranty-banner">
+      <div class="warranty-badge">3-5<br>YRS</div>
+      <div class="warranty-text">
+        <h4>Basic Standard Grade</h4>
+        <p>Solid standard shades for interior &amp; light exterior use. Reliable everyday colours.</p>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#F4F4F4;border-bottom:1px solid #ccc"></div><div class="swatch-name">Pure White</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0EAD8"></div><div class="swatch-name">Off White</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E8DFC9"></div><div class="swatch-name">Cream</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#D8D8D8"></div><div class="swatch-name">Light Grey</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#9A9A9A"></div><div class="swatch-name">Silver Grey</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4A4A4A"></div><div class="swatch-name">Anthracite</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#2A2A2A"></div><div class="swatch-name">Charcoal</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#101010"></div><div class="swatch-name">Jet Black</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#C0392B"></div><div class="swatch-name">Signal Red</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#7A1F1F"></div><div class="swatch-name">Wine Red</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E67E22"></div><div class="swatch-name">Bright Orange</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F1C40F"></div><div class="swatch-name">Signal Yellow</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#27AE60"></div><div class="swatch-name">Leaf Green</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1E8449"></div><div class="swatch-name">Forest Green</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#3498DB"></div><div class="swatch-name">Sky Blue</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1A5276"></div><div class="swatch-name">Navy Blue</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#795548"></div><div class="swatch-name">Earth Brown</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#4E342E"></div><div class="swatch-name">Chocolate</div></div>
+    </div>
+  </div>
+
+  <!-- WOODEN -->
+  <div class="color-section" data-section="wooden">
+    <div class="warranty-banner">
+      <div class="warranty-badge">5-7<br>YRS</div>
+      <div class="warranty-text">
+        <h4>Wooden Finish Grade</h4>
+        <p>Authentic wood-grain finishes on metal — ideal for doors, windows &amp; architectural profiles. UV-resistant.</p>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#8B4513 0%,#A0522D 30%,#6B3410 60%,#8B4513 100%)"></div><div class="swatch-name">Teak Wood</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#5C3317 0%,#7A4520 35%,#3D2210 65%,#5C3317 100%)"></div><div class="swatch-name">Walnut</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#A67B5B 0%,#C49770 30%,#8A6240 60%,#A67B5B 100%)"></div><div class="swatch-name">Oak</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#6B2D1F 0%,#8B3A28 30%,#4A1810 60%,#6B2D1F 100%)"></div><div class="swatch-name">Mahogany</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#75382D 0%,#925048 30%,#5A2418 60%,#75382D 100%)"></div><div class="swatch-name">Rosewood</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#C19A6B 0%,#D8B581 30%,#A87E50 60%,#C19A6B 100%)"></div><div class="swatch-name">Maple</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#9B4D2C 0%,#B86640 30%,#7A3A1F 60%,#9B4D2C 100%)"></div><div class="swatch-name">Cherry</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#3A2418 0%,#523322 30%,#221208 60%,#3A2418 100%)"></div><div class="swatch-name">Wenge</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#1F1308 0%,#2E1C10 30%,#0D0804 60%,#1F1308 100%)"></div><div class="swatch-name">Ebony</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#A07050 0%,#BC8765 30%,#88573A 60%,#A07050 100%)"></div><div class="swatch-name">Pine</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#6B4226 0%,#85563A 30%,#4F2E18 60%,#6B4226 100%)"></div><div class="swatch-name">Honey Oak</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(105deg,#3D2818 0%,#553A28 30%,#28180C 60%,#3D2818 100%)"></div><div class="swatch-name">Dark Walnut</div></div>
+    </div>
+  </div>
+
+  <!-- METALLIC -->
+  <div class="color-section" data-section="metallic">
+    <div class="warranty-banner">
+      <div class="warranty-badge">7-10<br>YRS</div>
+      <div class="warranty-text">
+        <h4>Metallic Grade</h4>
+        <p>Shimmering metallic finishes with depth and lustre. Excellent for architectural &amp; automotive aesthetics.</p>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#999 20%,#EEE 50%,#999 80%)"></div><div class="swatch-name">Silver</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#BBB 20%,#F8F8F8 50%,#BBB 80%)"></div><div class="swatch-name">Chrome</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#7A7A7A 20%,#B8B8B8 50%,#7A7A7A 80%)"></div><div class="swatch-name">Brushed Steel</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#B8860B,#FFD700,#B8860B)"></div><div class="swatch-name">Gold Metallic</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#9A7B5C,#D4A875,#9A7B5C)"></div><div class="swatch-name">Bronze</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#A66B40,#D88A55,#A66B40)"></div><div class="swatch-name">Copper</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#8B7430,#C4A658,#8B7430)"></div><div class="swatch-name">Antique Brass</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#C7B299,#E8DCC8,#C7B299)"></div><div class="swatch-name">Champagne</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#3C3C42,#6A6A78,#3C3C42)"></div><div class="swatch-name">Gunmetal</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#4A3C5F,#7A6890,#4A3C5F)"></div><div class="swatch-name">Iris Metallic</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#2A4858,#4A7088,#2A4858)"></div><div class="swatch-name">Ocean Metallic</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#5A3838,#825858,#5A3838)"></div><div class="swatch-name">Rose Metallic</div></div>
+    </div>
+  </div>
+
+  <!-- LUXURY -->
+  <div class="color-section" data-section="luxury">
+    <div class="warranty-banner">
+      <div class="warranty-badge">10-15<br>YRS</div>
+      <div class="warranty-text">
+        <h4>Luxury Finish Grade</h4>
+        <p>Premium effect finishes — crystal, pearl, marble &amp; stone textures. For high-end residential &amp; commercial projects.</p>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(circle at 30% 30%,#FFF 0%,#E8E0D0 50%,#C8BCA0 100%)"></div><div class="swatch-name">Crystal White</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(circle at 30% 30%,#4A4A4A 0%,#1A1A1A 50%,#000 100%)"></div><div class="swatch-name">Crystal Black</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(circle at 30% 30%,#F8E0E8 0%,#E8C0D0 50%,#C098A8 100%)"></div><div class="swatch-name">Pearl Pink</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(circle at 30% 30%,#FFF0CC 0%,#E8C870 50%,#A8884C 100%)"></div><div class="swatch-name">Pearl Gold</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(circle at 30% 30%,#E8E8E8 0%,#B8B8C0 40%,#787880 100%)"></div><div class="swatch-name">Pearl Silver</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(110deg,#FFF 0%,#DCDCDC 30%,#FFF 50%,#DCDCDC 70%,#FFF 100%)"></div><div class="swatch-name">Marble White</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(110deg,#3A3A3A 0%,#1A1A1A 30%,#4A4A4A 50%,#2A2A2A 70%,#3A3A3A 100%)"></div><div class="swatch-name">Marble Black</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(ellipse at 40% 40%,#A89878 0%,#7A6A50 50%,#4A3F28 100%)"></div><div class="swatch-name">Stone Beige</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(ellipse at 40% 40%,#888 0%,#555 50%,#333 100%)"></div><div class="swatch-name">Stone Grey</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(110deg,#D88040 0%,#A85820 40%,#D88040 60%,#A85820 100%)"></div><div class="swatch-name">Copper Effect</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(110deg,#A0825C 0%,#705A38 40%,#A0825C 60%,#705A38 100%)"></div><div class="swatch-name">Antique Bronze</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(circle at 40% 40%,#E8D8C0 0%,#A88858 70%)"></div><div class="swatch-name">Sand Texture</div></div>
+    </div>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="color-section" data-section="premium">
+    <div class="warranty-banner">
+      <div class="warranty-badge" style="background:linear-gradient(135deg,var(--red),var(--navy))">15-30<br>YRS</div>
+      <div class="warranty-text">
+        <h4>Premium Architectural Grade — Akzo Nobel &amp; Jotun</h4>
+        <p>Hyper-durable, super-durable, anti-scratch sand textures and architectural-grade powders. The longest coating lifecycle available — up to 30 years guaranteed by the powder manufacturer.</p>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#0D1B3E"></div><div class="swatch-name">Arch. Navy</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#2E2E2E"></div><div class="swatch-name">Hyper Black</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#5C5C5C"></div><div class="swatch-name">RAL 7016 Grey</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#7A7A7A"></div><div class="swatch-name">RAL 9006 Silver</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#9CA3AF"></div><div class="swatch-name">Hyper Silver</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F8F8F4"></div><div class="swatch-name">Hyper White</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#5A1A1A"></div><div class="swatch-name">Wine Hyper</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1A4A6A"></div><div class="swatch-name">Deep Ocean</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#3A5A3A"></div><div class="swatch-name">Forest Hyper</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#6A4A2A"></div><div class="swatch-name">Bronze Hyper</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:repeating-linear-gradient(45deg,#3A3A3A 0,#3A3A3A 2px,#2A2A2A 2px,#2A2A2A 4px)"></div><div class="swatch-name">Sand Tex. Black</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:repeating-linear-gradient(45deg,#A89878 0,#A89878 2px,#988868 2px,#988868 4px)"></div><div class="swatch-name">Sand Tex. Beige</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:repeating-linear-gradient(45deg,#5A5A5A 0,#5A5A5A 2px,#4A4A4A 2px,#4A4A4A 4px)"></div><div class="swatch-name">Sand Tex. Grey</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#252525"></div><div class="swatch-name">Akzo Matte</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#0E0E0E"></div><div class="swatch-name">Jotun Black</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINISHES ═══ -->
+<section id="finishes">
+  <div class="sec-eyebrow" data-r>Finish Types</div>
+  <h2 class="sec-title" data-r data-delay="1">Choose Your<br><span class="accent">Texture.</span></h2>
+  <p class="sec-sub" data-r data-delay="2">Each colour in the catalog can be supplied in multiple finish textures depending on your application.</p>
+  <div class="finishes-grid" data-r data-delay="3">
+    <div class="finish-card">
+      <div class="finish-preview" style="background:#1a1a1a"></div>
+      <h4>Matte</h4>
+      <p>Low sheen, modern look</p>
+    </div>
+    <div class="finish-card">
+      <div class="finish-preview" style="background:#1a1a1a;box-shadow:inset 0 -8px 12px rgba(255,255,255,0.05)"></div>
+      <h4>Satin</h4>
+      <p>Smooth, subtle reflection</p>
+    </div>
+    <div class="finish-card">
+      <div class="finish-preview" style="background:radial-gradient(circle at 30% 30%,#666 0%,#1a1a1a 80%)"></div>
+      <h4>High Gloss</h4>
+      <p>Mirror-like, premium shine</p>
+    </div>
+    <div class="finish-card">
+      <div class="finish-preview" style="background:repeating-linear-gradient(45deg,#3a3a3a 0,#3a3a3a 2px,#1a1a1a 2px,#1a1a1a 4px)"></div>
+      <h4>Sand Texture</h4>
+      <p>Anti-scratch, grippy feel</p>
+    </div>
+    <div class="finish-card">
+      <div class="finish-preview" style="background:linear-gradient(135deg,#999 20%,#eee 50%,#999 80%)"></div>
+      <h4>Metallic</h4>
+      <p>Shimmering metal flake</p>
+    </div>
+    <div class="finish-card">
+      <div class="finish-preview" style="background:radial-gradient(circle at 30% 30%,#fff 0%,#d8d8d8 50%,#999 100%)"></div>
+      <h4>Crystal</h4>
+      <p>Deep glittering effect</p>
+    </div>
+    <div class="finish-card">
+      <div class="finish-preview" style="background:linear-gradient(105deg,#8B4513,#A0522D,#6B3410,#8B4513)"></div>
+      <h4>Wood Grain</h4>
+      <p>Authentic wood replica</p>
+    </div>
+    <div class="finish-card">
+      <div class="finish-preview" style="background:radial-gradient(ellipse at 30% 30%,#a89878,#705c40)"></div>
+      <h4>Stone</h4>
+      <p>Natural stone texture</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process">
+  <div class="sec-eyebrow" data-r>How It's Done</div>
+  <h2 class="sec-title" data-r data-delay="1">5-Step<br><span class="accent">Process.</span></h2>
+  <p class="sec-sub" data-r data-delay="2">From raw aluminium to packaging-ready finished product. Every step inspected.</p>
+  <div class="process-line" data-r data-delay="3">
+    <div class="proc-node">
+      <div class="proc-circle">01</div>
+      <h4>RAW MATERIAL</h4>
+      <p>Aluminium / metal parts received, sorted, weighed and tagged.</p>
+    </div>
+    <div class="proc-node">
+      <div class="proc-circle">02</div>
+      <h4>PRE-TREATMENT</h4>
+      <p>Chemical cleaning to remove oil, grease, rust contamination from the surface.</p>
+    </div>
+    <div class="proc-node">
+      <div class="proc-circle">03</div>
+      <h4>POWDER COATING</h4>
+      <p>Electrostatic spray application in our Back-2-Back operator booth with double cyclone.</p>
+    </div>
+    <div class="proc-node">
+      <div class="proc-circle">04</div>
+      <h4>OVEN CURING</h4>
+      <p>Indirect heating with natural air flow. 20-ft aluminium section capacity.</p>
+    </div>
+    <div class="proc-node">
+      <div class="proc-circle">05</div>
+      <h4>PACKAGING</h4>
+      <p>Quality-checked, packed and ready for collection or dispatch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INFRASTRUCTURE ═══ -->
+<section id="infra">
+  <div class="sec-eyebrow" data-r>Our Infrastructure</div>
+  <h2 class="sec-title" data-r data-delay="1">Industrial-Grade<br><span class="accent">Equipment.</span></h2>
+  <p class="sec-sub" data-r data-delay="2">We invest in proven equipment to deliver consistent quality at scale. Here's what powers our workshop.</p>
+
+  <div class="infra-grid" data-r data-delay="3">
+    <div class="infra-card">
+      <div class="infra-img"><img src="compressor.png" alt="5HP Double Piston Compressor"></div>
+      <div class="infra-body">
+        <span class="infra-tag">ELGI · Compressor</span>
+        <h4>5 HP Double Piston</h4>
+        <p>Industrial compressed air supply for consistent spray pressure.</p>
+      </div>
+    </div>
+    <div class="infra-card">
+      <div class="infra-img"><img src="magnum.png" alt="Magnum Powder Coating Equipment"></div>
+      <div class="infra-body">
+        <span class="infra-tag">Statfield · Magnum</span>
+        <h4>Magnum Powder Coating</h4>
+        <p>Professional electrostatic application with manual applicators.</p>
+      </div>
+    </div>
+    <div class="infra-card">
+      <div class="infra-img"><img src="burner.png" alt="Ecoflam Indirect Gas Burner"></div>
+      <div class="infra-body">
+        <span class="infra-tag">Ecoflam · Burner</span>
+        <h4>Indirect Gas Burner</h4>
+        <p>Precise oven temperature control for perfect curing every batch.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="infra-specs">
+    <div class="spec-card">
+      <h5>COATING BOOTH</h5>
+      <ul>
+        <li>Back-2-Back operator booth</li>
+        <li>Double cyclone filtration</li>
+        <li>Indirect heating system</li>
+      </ul>
+    </div>
+    <div class="spec-card">
+      <h5>CURING OVEN</h5>
+      <ul>
+        <li>20 ft aluminium section capacity</li>
+        <li>Natural heat air flow</li>
+        <li>Cut-outs at entry &amp; exit forming hot air layer</li>
+      </ul>
+    </div>
+    <div class="spec-card">
+      <h5>PRE-TREATMENT</h5>
+      <ul>
+        <li>Multi-stage chemical cleaning</li>
+        <li>Oil, grease &amp; rust removal</li>
+        <li>Adhesion-optimized surface prep</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PORTFOLIO / WORK ═══ -->
+<section id="work">
+  <div class="sec-eyebrow" data-r>Past Work</div>
+  <h2 class="sec-title" data-r data-delay="1">From Custom Pieces<br>to <span class="accent">Bulk Projects.</span></h2>
+  <p class="sec-sub" data-r data-delay="2">A snapshot of what we coat. We handle single units and large production runs with the same level of care.</p>
+
+  <div class="work-grid" data-r data-delay="3">
+    <div class="work-tile">
+      <div class="work-tile-img"><img src="profiles.png" alt="Coloured aluminium profiles"></div>
+      <div class="work-tile-overlay">
+        <span class="work-tile-tag">Aluminium Profiles</span>
+        <h4>Multi-Color Section Coating</h4>
+      </div>
+    </div>
+    <div class="work-tile">
+      <div class="work-tile-img"><img src="building.png" alt="Architectural glazing"></div>
+      <div class="work-tile-overlay">
+        <span class="work-tile-tag">Architectural</span>
+        <h4>Curtain Wall Sections</h4>
+      </div>
+    </div>
+    <div class="work-tile">
+      <div class="work-tile-img"><img src="houses.png" alt="Residential window frames"></div>
+      <div class="work-tile-overlay">
+        <span class="work-tile-tag">Residential</span>
+        <h4>Window &amp; Door Frames</h4>
+      </div>
+    </div>
+    <div class="work-tile placeholder">
+      <div class="work-tile-img" style="background:linear-gradient(135deg,#2A4858,#1A3848)"></div>
+      <div class="work-tile-overlay">
+        <span class="work-tile-tag">Industrial</span>
+        <h4>MS Hardware Batch</h4>
+      </div>
+    </div>
+    <div class="work-tile placeholder">
+      <div class="work-tile-img" style="background:linear-gradient(135deg,#5A3838,#3A1A1A)"></div>
+      <div class="work-tile-overlay">
+        <span class="work-tile-tag">Custom</span>
+        <h4>Bespoke Furniture Frames</h4>
+      </div>
+    </div>
+    <div class="work-tile placeholder">
+      <div class="work-tile-img" style="background:linear-gradient(135deg,#3A5A3A,#1A3A1A)"></div>
+      <div class="work-tile-overlay">
+        <span class="work-tile-tag">Architectural</span>
+        <h4>Wooden-Finish Profiles</h4>
+      </div>
+    </div>
+    <div class="work-tile placeholder">
+      <div class="work-tile-img" style="background:linear-gradient(135deg,#4A3C5F,#2A1C3F)"></div>
+      <div class="work-tile-overlay">
+        <span class="work-tile-tag">Premium</span>
+        <h4>Metallic Finish Project</h4>
+      </div>
+    </div>
+    <div class="work-tile placeholder">
+      <div class="work-tile-img" style="background:linear-gradient(135deg,#6B3565,#3D1A47)"></div>
+      <div class="work-tile-overlay">
+        <span class="work-tile-tag">OEM</span>
+        <h4>Bulk Export Order</h4>
+      </div>
+    </div>
+  </div>
+  <div class="work-cta">
+    <a href="#enquiry">📷 Request our full portfolio →</a>
+  </div>
+</section>
+
+<!-- ═══ CLIENTS ═══ -->
+<section id="clients">
+  <div class="sec-eyebrow" data-r>Trusted By</div>
+  <h2 class="sec-title" data-r data-delay="1">Clients &amp;<br><span class="accent">Partners.</span></h2>
+  <p class="sec-sub" data-r data-delay="2">We've supplied finished products to fabricators, architects, exporters, OEMs and contractors across Delhi NCR &amp; beyond.</p>
+
+  <div class="clients-grid" data-r data-delay="3">
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+    <div class="client-cell"><div class="placeholder-logo">CLIENT<br>LOGO</div></div>
+  </div>
+
+  <div class="partner-row" data-r>
+    <div>
+      <h3>Backed by Global Paint Leaders</h3>
+      <p>Our coating powders come directly from Akzo Nobel and Jotun Paints — the world's most trusted industrial coating manufacturers. Coating lifecycles ranging up to 30 years are guaranteed by our vendors.</p>
+    </div>
+    <div class="partner-logos">
+      <div class="partner-brand">AkzoNobel</div>
+      <div class="partner-brand jotun">JOTUN</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section id="why">
+  <div class="sec-eyebrow" data-r>Why Metro Coatings</div>
+  <h2 class="sec-title" data-r data-delay="1">Pioneers in <span class="accent">Aluminium</span><br>Surface Finishing.</h2>
+  <p class="sec-sub" data-r data-delay="2">Decades of specialized experience in coating aluminium extrusions and profiles, with the equipment, certifications and capacity to deliver consistent quality.</p>
+  <div class="why-grid" data-r data-delay="3">
+    <div class="why-item">
+      <span class="why-num">01</span>
+      <span class="why-icon">🏆</span>
+      <h4>Akzo Nobel &amp; Jotun</h4>
+      <p>Authorized vendor for the world's leading paint manufacturers. Premium powders, certified processes, guaranteed by the source.</p>
+    </div>
+    <div class="why-item">
+      <span class="why-num">02</span>
+      <span class="why-icon">🛡️</span>
+      <h4>Up to 30-Year Warranty</h4>
+      <p>Premium architectural-grade coatings carry a lifecycle warranty of up to 30 years from the powder manufacturer.</p>
+    </div>
+    <div class="why-item">
+      <span class="why-num">03</span>
+      <span class="why-icon">🏗️</span>
+      <h4>Aluminium Extrusion Specialists</h4>
+      <p>20-ft section capacity. Custom hangers, gentle handling, anti-scratch processes optimized for aluminium profiles.</p>
+    </div>
+    <div class="why-item">
+      <span class="why-num">04</span>
+      <span class="why-icon">🎨</span>
+      <h4>Five Coating Grades</h4>
+      <p>Basic, Wooden, Metallic, Luxury, Premium — choose the durability and aesthetic that fits your project &amp; budget.</p>
+    </div>
+    <div class="why-item">
+      <span class="why-num">05</span>
+      <span class="why-icon">🔥</span>
+      <h4>Modern Infrastructure</h4>
+      <p>ELGI compressor, Statfield Magnum applicators, Ecoflam burner, double-cyclone booth — all maintained to factory spec.</p>
+    </div>
+    <div class="why-item">
+      <span class="why-num">06</span>
+      <span class="why-icon">📦</span>
+      <h4>Single Piece to Bulk</h4>
+      <p>Whether you need one custom item or a batch of 5,000+ — same quality, same care, fair per-piece pricing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ENQUIRY ═══ -->
+<section id="enquiry">
+  <div class="enq-info" data-r>
+    <div class="sec-eyebrow">Get a Quote</div>
+    <h2 class="sec-title">Let's Talk<br><span class="accent">Coating.</span></h2>
+    <p class="sec-sub">Share your requirement — material, quantity, colour, finish grade — and we'll respond within a few hours with a clear quote. No commitment.</p>
+
+    <div class="contact-list">
+      <div class="ci">
+        <div class="ci-icon">📞</div>
+        <div>
+          <div class="ci-label">Call / WhatsApp</div>
+          <div class="ci-val">
+            <a href="tel:+919911341135">+91 99113 41135</a>
+          </div>
+        </div>
+      </div>
+      <div class="ci">
+        <div class="ci-icon">✉️</div>
+        <div>
+          <div class="ci-label">Email</div>
+          <div class="ci-val"><a href="mailto:metrocoatingsdelhi@gmail.com">metrocoatingsdelhi@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="ci">
+        <div class="ci-icon">📍</div>
+        <div>
+          <div class="ci-label">Workshop Address</div>
+          <div class="ci-val"><a href="https://maps.app.goo.gl/B54yPWWy5QLftRSz8" target="_blank" style="color:var(--red)">Open in Google Maps ↗</a><br>Swaroop Nagar, Delhi</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/919911341135?text=Hi%20Metro%20Coatings%2C%20I%20need%20a%20quote%20for%20powder%20coating." class="wa-btn" target="_blank">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat on WhatsApp Now
+    </a>
+  </div>
+
+  <div class="enq-form" data-r data-delay="2">
+    <h3>Request a Quote</h3>
+    <p class="form-sub">We respond within a few hours during working days.</p>
+    <div class="frow">
+      <div class="fg"><label>Name *</label><input type="text" placeholder="Your Name" id="f-name"></div>
+      <div class="fg"><label>Phone / WhatsApp *</label><input type="tel" placeholder="+91 9XXXX XXXXX" id="f-phone"></div>
+    </div>
+    <div class="fg"><label>Company (optional)</label><input type="text" placeholder="Your Business Name" id="f-co"></div>
+    <div class="frow">
+      <div class="fg">
+        <label>Material *</label>
+        <select id="f-mat">
+          <option value="">Select...</option>
+          <option>Aluminium Extrusion / Profile</option>
+          <option>MS / Mild Steel</option>
+          <option>Cast Iron</option>
+          <option>Stainless Steel</option>
+          <option>Hardware / Mixed</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Color Grade *</label>
+        <select id="f-grade">
+          <option value="">Select...</option>
+          <option>Basic (3-5 yrs)</option>
+          <option>Wooden (5-7 yrs)</option>
+          <option>Metallic (7-10 yrs)</option>
+          <option>Luxury (10-15 yrs)</option>
+          <option>Premium / Akzo-Jotun (15-30 yrs)</option>
+          <option>Not sure — please advise</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fg">
+        <label>Finish</label>
+        <select id="f-finish">
+          <option value="">Select...</option>
+          <option>Matte</option>
+          <option>Satin</option>
+          <option>High Gloss</option>
+          <option>Sand Texture</option>
+          <option>Metallic</option>
+          <option>Crystal</option>
+          <option>Wood Grain</option>
+          <option>Stone</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Quantity</label>
+        <select id="f-qty">
+          <option value="">Select...</option>
+          <option>Single piece / small</option>
+          <option>1-100 pcs</option>
+          <option>100-1000 pcs</option>
+          <option>1000+ / bulk</option>
+          <option>By weight (kg)</option>
+        </select>
+      </div>
+    </div>
+    <div class="fg"><label>Specific Shade or RAL Code</label><input type="text" placeholder="e.g. Matte Black · RAL 9005 · Teak Wood Finish" id="f-shade"></div>
+    <div class="fg"><label>Project Details</label><textarea placeholder="Describe your parts, project, timeline, or any specific requirements..." id="f-details"></textarea></div>
+    <button class="submit-btn" id="submit-btn">Send Enquiry via WhatsApp →</button>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo"><img src="logo-hd.png" alt="Metro Coatings"></div>
+      <p class="footer-tagline">Metro Coatings — Pioneers in aluminium extrusion surface finishing. Professional powder coating job work in Delhi since decades.</p>
+    </div>
+    <div>
+      <h5>Sections</h5>
+      <a href="#about">About</a>
+      <a href="#materials">Materials</a>
+      <a href="#colors">Colors</a>
+      <a href="#process">Process</a>
+      <a href="#work">Work</a>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <a href="#materials">Aluminium Coating</a>
+      <a href="#materials">MS Job Work</a>
+      <a href="#colors">Color Catalog</a>
+      <a href="#infra">Infrastructure</a>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <a href="tel:+919911341135">+91 99113 41135</a>
+      <a href="mailto:metrocoatingsdelhi@gmail.com">metrocoatingsdelhi@gmail.com</a>
+      <a href="https://maps.app.goo.gl/B54yPWWy5QLftRSz8" target="_blank">View on Google Maps ↗</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 METRO COATINGS · POWDER COATING SERVICES</p>
+    <p>POWERED BY AKZO NOBEL &amp; JOTUN PAINTS</p>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/919911341135?text=Hi%20Metro%20Coatings%2C%20I%20need%20a%20quote." class="wa-float" target="_blank">
+  <div class="pulse"></div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// ═══════════════════════════════════════════════════
+//  GUN CURSOR — nozzle tip hotspot at SVG (90, 25)
+// ═══════════════════════════════════════════════════
+const GNX = 90, GNY = 25;
+const gunEl = document.getElementById('gun');
+let mx = 0, my = 0, pressing = false, toastOut = false;
+
+const PALETTE = [
+  '#E63946','#FF3B30','#FF6B35','#FF9F0A','#FFD60A',
+  '#30D158','#06D6A0','#0A84FF','#1E3A6E','#5E5CE6','#BF5AF2',
+  '#FF375F','#FFC0CB','#D4A843','#C0C0C0','#FF8C38'
+];
+
+function posGun(x, y) {
+  gunEl.style.transform = `translate(${x - GNX}px,${y - GNY}px)`;
+}
+posGun(mx, my);
+
+window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; posGun(mx, my); });
+document.addEventListener('mouseleave', () => { gunEl.style.opacity = '0'; });
+document.addEventListener('mouseenter', () => { gunEl.style.opacity = '1'; });
+
+// ═══════════════════════════════════════════════════
+//  AIR DUST PARTICLE SYSTEM (colorful)
+// ═══════════════════════════════════════════════════
+const cv = document.getElementById('spray-canvas');
+const cx = cv.getContext('2d');
+
+function rsz() { cv.width = window.innerWidth; cv.height = window.innerHeight; }
+rsz(); window.addEventListener('resize', rsz);
+
+let pts = [];
+function dustCol() { return PALETTE[Math.floor(Math.random() * PALETTE.length)]; }
+
+class Mote {
+  constructor(x, y) {
+    this.x = x; this.y = y;
+    const a = (Math.random() - 0.5) * 2.3;
+    const spd = 7 + Math.random() * 16;
+    this.vx = Math.cos(a) * spd; this.vy = Math.sin(a) * spd;
+    this.sz = 0.4 + Math.random() * 1.6;
+    this.al = 0.45 + Math.random() * 0.45;
+    this.ml = this.al;
+    this.lf = 10 + Math.random() * 22; this.mxlf = this.lf;
+    this.dr = 0.87 + Math.random() * 0.05;
+    this.gv = 0.008 + Math.random() * 0.012;
+    this.col = dustCol();
+  }
+  tick() {
+    this.x += this.vx; this.y += this.vy;
+    this.vy += this.gv;
+    this.vx *= this.dr; this.vy *= this.dr;
+    this.lf--;
+    this.al = this.ml * (this.lf / this.mxlf);
+  }
+  draw() {
+    if (this.al <= 0.002) return;
+    cx.save(); cx.globalAlpha = this.al;
+    cx.fillStyle = this.col;
+    cx.beginPath(); cx.arc(this.x, this.y, this.sz, 0, 6.283); cx.fill();
+    cx.restore();
+  }
+  dead() { return this.lf <= 0; }
+}
+
+class Puff {
+  constructor(x, y) {
+    this.x = x; this.y = y;
+    const a = (Math.random() - 0.5) * 2.8;
+    const spd = 2 + Math.random() * 8;
+    this.vx = Math.cos(a) * spd; this.vy = Math.sin(a) * spd;
+    this.sz = 1.8 + Math.random() * 4.2;
+    this.al = 0.30 + Math.random() * 0.35;
+    this.ml = this.al;
+    this.lf = 18 + Math.random() * 30; this.mxlf = this.lf;
+    this.dr = 0.93; this.gv = 0.004;
+    this.col = dustCol();
+  }
+  tick() {
+    this.x += this.vx; this.y += this.vy;
+    this.vy += this.gv;
+    this.vx *= this.dr; this.vy *= this.dr;
+    this.lf--;
+    const r = this.lf / this.mxlf;
+    this.al = this.ml * Math.min(1, r / 0.4);
+  }
+  draw() {
+    if (this.al <= 0.002) return;
+    cx.save(); cx.globalAlpha = this.al;
+    cx.fillStyle = this.col;
+    cx.beginPath(); cx.arc(this.x, this.y, this.sz, 0, 6.283); cx.fill();
+    cx.restore();
+  }
+  dead() { return this.lf <= 0; }
+}
+
+class Streak {
+  constructor(x, y) {
+    this.x = x; this.y = y;
+    const a = (Math.random() - 0.5) * 1.0;
+    const spd = 14 + Math.random() * 20;
+    this.vx = Math.cos(a) * spd; this.vy = Math.sin(a) * spd;
+    this.lf = 6 + Math.random() * 10; this.mxlf = this.lf;
+    this.col = dustCol();
+    this.al = 0.40 + Math.random() * 0.45; this.ml = this.al;
+    this.dr = 0.84;
+  }
+  tick() {
+    this.x += this.vx; this.y += this.vy;
+    this.vx *= this.dr; this.vy *= this.dr;
+    this.lf--;
+    this.al = this.ml * (this.lf / this.mxlf);
+  }
+  draw() {
+    if (this.al <= 0.002) return;
+    const len = Math.sqrt(this.vx*this.vx+this.vy*this.vy) * 1.4;
+    const nx = this.vx/len||0, ny = this.vy/len||0;
+    cx.save(); cx.globalAlpha = this.al;
+    cx.strokeStyle = this.col; cx.lineWidth = 0.7;
+    cx.beginPath(); cx.moveTo(this.x,this.y); cx.lineTo(this.x-nx*len*2,this.y-ny*len*2);
+    cx.stroke(); cx.restore();
+  }
+  dead() { return this.lf <= 0; }
+}
+
+function spray(x, y, n) {
+  for (let i = 0; i < n; i++) {
+    pts.push(new Mote(x, y));
+    if (Math.random() > 0.55) pts.push(new Puff(x, y));
+  }
+}
+function blast(x, y) {
+  for (let i = 0; i < 28; i++) pts.push(new Streak(x, y));
+  for (let i = 0; i < 14; i++) pts.push(new Puff(x, y));
+}
+
+window.addEventListener('mousedown', e => {
+  if (e.button) return;
+  pressing = true;
+  blast(mx, my); spray(mx, my, 18);
+  gunEl.classList.remove('holding','firing');
+  gunEl.classList.add('firing');
+  setTimeout(() => { gunEl.classList.remove('firing'); if (pressing) gunEl.classList.add('holding'); }, 120);
+  if (!toastOut) {
+    const t = document.getElementById('spray-toast');
+    t.style.opacity = '0';
+    setTimeout(() => t.style.display='none', 600);
+    toastOut = true;
+  }
+});
+
+window.addEventListener('mouseup', () => {
+  pressing = false;
+  gunEl.classList.remove('holding','firing');
+});
+
+(function loop() {
+  cx.clearRect(0, 0, cv.width, cv.height);
+  if (pressing) spray(mx, my, 6);
+  pts = pts.filter(p => !p.dead());
+  for (const p of pts) { p.tick(); p.draw(); }
+  requestAnimationFrame(loop);
+})();
+
+// ═══════════════════════════════════════════════════
+//  HERO AMBIENT PARTICLES
+// ═══════════════════════════════════════════════════
+const hc = document.getElementById('hero-bg');
+const hx = hc.getContext('2d');
+const heroEl = document.querySelector('.hero');
+
+function rszhc() { hc.width = heroEl.offsetWidth; hc.height = heroEl.offsetHeight; }
+rszhc(); window.addEventListener('resize', rszhc);
+
+const AMB = Array.from({length: 65}, () => ({
+  x: Math.random() * (hc.width||window.innerWidth),
+  y: Math.random() * (hc.height||window.innerHeight),
+  r: .8 + Math.random() * 2.6,
+  vx: (Math.random()-.5)*.3,
+  vy: -(0.12 + Math.random()*.42),
+  col: PALETTE[Math.floor(Math.random()*PALETTE.length)],
+  a: .05 + Math.random()*.22,
+  ph: Math.random()
+}));
+
+(function hloop() {
+  hx.clearRect(0, 0, hc.width, hc.height);
+  AMB.forEach(p => {
+    p.x += p.vx; p.y += p.vy; p.ph += .005;
+    const alpha = p.a * Math.sin(p.ph * Math.PI);
+    if (alpha > 0) {
+      hx.save(); hx.globalAlpha = alpha; hx.fillStyle = p.col;
+      hx.beginPath(); hx.arc(p.x, p.y, p.r, 0, 6.283); hx.fill();
+      hx.restore();
+    }
+    if (p.y < -10 || p.ph >= 1) {
+      p.x = Math.random() * hc.width;
+      p.y = hc.height + 10;
+      p.ph = 0;
+      p.col = PALETTE[Math.floor(Math.random()*PALETTE.length)];
+    }
+  });
+  requestAnimationFrame(hloop);
+})();
+
+// ═══════════════════════════════════════════════════
+//  COLOR CATALOG TABS
+// ═══════════════════════════════════════════════════
+document.querySelectorAll('.cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const cat = tab.dataset.cat;
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.color-section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.color-section[data-section="${cat}"]`).classList.add('active');
+  });
+});
+
+// ═══════════════════════════════════════════════════
+//  ENQUIRY FORM → WHATSAPP
+// ═══════════════════════════════════════════════════
+document.getElementById('submit-btn').addEventListener('click', (e) => {
+  e.preventDefault();
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const co      = document.getElementById('f-co').value.trim();
+  const mat     = document.getElementById('f-mat').value;
+  const grade   = document.getElementById('f-grade').value;
+  const finish  = document.getElementById('f-finish').value;
+  const qty     = document.getElementById('f-qty').value;
+  const shade   = document.getElementById('f-shade').value.trim();
+  const details = document.getElementById('f-details').value.trim();
+
+  if (!name || !phone || !mat || !grade) {
+    alert('Please fill in your name, phone, material and color grade.');
+    return;
+  }
+
+  let msg = `*Powder Coating Enquiry — Metro Coatings*%0A%0A`;
+  msg += `*Name:* ${name}%0A`;
+  msg += `*Phone:* ${phone}%0A`;
+  if (co) msg += `*Company:* ${co}%0A`;
+  msg += `*Material:* ${mat}%0A`;
+  msg += `*Color Grade:* ${grade}%0A`;
+  if (finish) msg += `*Finish:* ${finish}%0A`;
+  if (qty)    msg += `*Quantity:* ${qty}%0A`;
+  if (shade)  msg += `*Shade/RAL:* ${shade}%0A`;
+  if (details) msg += `%0A*Details:* ${details}`;
+
+  msg = msg.replace(/ /g, '%20');
+  window.open(`https://wa.me/919911341135?text=${msg}`, '_blank');
+});
+
+// ═══════════════════════════════════════════════════
+//  SCROLL REVEAL
+// ═══════════════════════════════════════════════════
+const ro = new IntersectionObserver(
+  es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+  { threshold: .08 }
+);
+document.querySelectorAll('[data-r]').forEach(el => ro.observe(el));
+</script>
+
+</body>
+</html>
